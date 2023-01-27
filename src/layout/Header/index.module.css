@@ -17,6 +17,7 @@
 .navLeftSpan {
     display: flex;
     align-items: center;
+    padding-left: 12px;
 }
 .navLeftSpan:hover {
     cursor: pointer;

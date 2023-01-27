@@ -15,7 +15,7 @@ function SearchForm() {
 
     return <>
         <form className={classes.searchForm} onSubmit={onFormSubmit}>
-            <input type={'text'} value={searchKey} onChange={e=>setSearchKey(e.target.value)} placeholder={'name of movie...'} />
+            <input type={'text'} value={searchKey} onChange={e=>setSearchKey(e.target.value)} placeholder={'Youtube Video...'} />
             <button type={'submit'}> <Search /> </button>
         </form>
     </>

@@ -15,7 +15,7 @@
 }
 .searchForm>input:focus,
 .searchForm>input:hover {
-    outline-color: rgb(48 123 183);
+    outline-color: rgb(206, 85, 122);
     outline-style: double;
 }
 .searchForm>button {
@@ -23,7 +23,7 @@
     height: 33px;
     right: 21px;
     top: 21px;
-    background: rgb(48 123 183);
+    background: rgb(126 56 80);
     display: flex;
     align-items: center;
     border: none;
@@ -33,7 +33,8 @@
     color: white;
 }
 .searchForm>button:hover {
-    background: #2196f3;
+    background: rgb(166, 74, 104);
+    cursor: pointer;
 }
 
 @media screen and (min-width: 699px){

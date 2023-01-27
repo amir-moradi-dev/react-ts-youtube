@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from "./components/App";
 import './index.css'
 import Layout from "./layout";
+import StateContextProvider from "./store/StateContext";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Layout>
-        <App />
-    </Layout>
+      <StateContextProvider>
+          <Layout>
+              <App />
+          </Layout>
+      </StateContextProvider>
   </React.StrictMode>,
 )

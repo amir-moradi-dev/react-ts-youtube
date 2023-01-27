@@ -25,3 +25,5 @@ function StateContextProvider({children}:{children:ReactNode}) {
         {children}
     </StateContext.Provider>
 }
+
+export default StateContextProvider

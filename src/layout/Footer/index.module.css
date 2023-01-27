@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    height: 33px;
+    background: #9f4664;
+    color: wheat;
+    align-items: center;
+    justify-content: center;
+}
+.footerSpan {
+
+}
