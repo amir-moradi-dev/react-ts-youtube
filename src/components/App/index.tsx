@@ -1,27 +1,16 @@
-import classes from './index.module.css'
-import {useContext, useEffect} from "react";
-import {StateContext} from "../../store/StateContext";
-import youtube from "../../api/youtube";
+import {useYoutube} from "../../hooks";
+import {YoutubeVideoItemsType} from "../../types";
 
 function App() {
 
-    const {searchKeyCtx} = useContext(StateContext)
+    const movieList = useYoutube()
 
-    useEffect(()=>{
-        if(searchKeyCtx)
-        (async ()=>{
-            try {
-                const response = await youtube.get('search',{
-                    params:{ part:"snippet", maxResult:"5", q:searchKeyCtx }
-                })
-                console.log(response)
-            }
-            catch (e) {
-                throw new Error('Some Shit Happened')
-            }
-
-        })()
-    },[searchKeyCtx])
+    console.log('movieList => ')
+    if(movieList)
+        movieList.map( (video:YoutubeVideoItemsType) => {
+            console.log('video=>')
+            console.log(video.snippet.title)
+        })
 
     return <>
         <h1>Youtube Movies</h1>
