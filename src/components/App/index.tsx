@@ -1,16 +1,10 @@
 import {useYoutube} from "../../hooks";
-import {YoutubeVideoItemsType} from "../../types";
+import {useContext} from "react";
+import {StateContext} from "../../store/StateContext";
 
 function App() {
-
-    const movieList = useYoutube()
-
-    console.log('movieList => ')
-    if(movieList)
-        movieList.map( (video:YoutubeVideoItemsType) => {
-            console.log('video=>')
-            console.log(video.snippet.title)
-        })
+    const {searchKeyCtx:searchKey} = useContext(StateContext)
+    const movieList = useYoutube(searchKey)
 
     return <>
         <h1>Youtube Movies</h1>

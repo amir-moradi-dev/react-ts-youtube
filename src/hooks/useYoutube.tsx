@@ -1,13 +1,10 @@
-import {useContext, useEffect, useState} from "react";
-import {StateContext} from "../store/StateContext";
+import {useEffect, useState} from "react";
 import {AxiosResponse} from "axios";
 import youtube, {AxiosYoutubeErrorHandling} from "../api/youtube";
 import {YoutubeResponseType} from "../types";
 import {VideoListsType} from "../types";
 
-function useYoutube() {
-    // Dependencies
-    const {searchKeyCtx} = useContext(StateContext)
+function useYoutube(searchKey:string) {
     const [videoLists,setVideoLists] = useState<VideoListsType>(null)
 
     function handleSuccess(response:AxiosResponse<YoutubeResponseType>) {
@@ -16,12 +13,12 @@ function useYoutube() {
     }
 
     useEffect(()=>{
-        if(searchKeyCtx)
-           youtube({params:{ q:searchKeyCtx }})
+        if(searchKey)
+           youtube({params:{ q:searchKey }})
                .then(handleSuccess)
                .catch(AxiosYoutubeErrorHandling)
 
-    },[searchKeyCtx])
+    },[searchKey])
 
     return videoLists
 }
