@@ -1,0 +1,22 @@
+.containerMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0;
+}
+.containerLeft {
+    width: 66%;
+    height: 77vh;
+    background: darkblue;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 3px #9f4664;
+}
+.containerRight {
+    width: 33%;
+    min-height: 330px;
+    background: darkgreen;
+}
+.loading {
+    background: #fcd9e5 !important;
+}

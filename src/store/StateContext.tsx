@@ -15,7 +15,7 @@ export const StateContext = createContext<StateContextType>(initialState)
 
 function StateContextProvider({children}:{children:ReactNode}) {
 
-    const [searchKeyCtx,setSearchKeyCtx] = useState<string>('')
+    const [searchKeyCtx,setSearchKeyCtx] = useState<string>('tommy shelby')
 
     const state:StateContextType = {
         searchKeyCtx, setSearchKeyCtx

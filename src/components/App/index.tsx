@@ -1,13 +1,27 @@
+import classes from './index.module.css'
 import {useYoutube} from "../../hooks";
 import {useContext} from "react";
 import {StateContext} from "../../store/StateContext";
+import Loading from "../Loading";
+import VideoDetails from "../VideoDetails";
 
 function App() {
     const {searchKeyCtx:searchKey} = useContext(StateContext)
-    const movieList = useYoutube(searchKey)
+    const videosList = useYoutube(searchKey)
 
     return <>
-        <h1>Youtube Movies</h1>
+        {!videosList && <Loading className={classes.loading} message={'Loading Videos...'} />}
+        {videosList && (
+            <div className={classes.containerMain}>
+                <div className={classes.containerLeft}>
+                    <VideoDetails video={videosList[0]} />
+                </div>
+                <div className={classes.containerRight}>
+                    {/*<VideosList />*/}
+                </div>
+            </div>
+        )}
+
     </>
 }
 
