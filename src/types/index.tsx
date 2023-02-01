@@ -70,4 +70,4 @@ export type YoutubeVideoItemsType = {
 
 }
 
-export type VideoListsType = YoutubeVideoItemsType[]|null
+export type VideosListType = YoutubeVideoItemsType[]|null

@@ -7,15 +7,15 @@
 }
 .containerLeft {
     width: 66%;
-    height: 77vh;
-    background: darkblue;
+    min-height: 77vh;
+    margin: 0 auto;
     border-radius: 6px;
-    box-shadow: 0 0 2px 3px #9f4664;
 }
 .containerRight {
     width: 33%;
     min-height: 330px;
-    background: darkgreen;
+    margin: 0 auto;
+    margin-left: 0;
 }
 .loading {
     background: #fcd9e5 !important;

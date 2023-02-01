@@ -1,14 +1,15 @@
 import {useEffect, useState} from "react";
-import {AxiosResponse} from "axios";
+import {AxiosError, AxiosResponse} from "axios";
 import youtube, {AxiosYoutubeErrorHandling} from "../api/youtube";
 import {YoutubeResponseType} from "../types";
-import {VideoListsType} from "../types";
+import {VideosListType} from "../types";
 
 function useYoutube(searchKey:string) {
-    const [videoLists,setVideoLists] = useState<VideoListsType>(null)
+    const [videosList,setVideosList] = useState<VideosListType>(null)
+    const [,ThrowAsyncError] = useState<null|Error>(null)
 
     function handleSuccess(response:AxiosResponse<YoutubeResponseType>) {
-        setVideoLists(response.data.items)
+        setVideosList(response.data.items)
         console.log(response)
     }
 
@@ -16,11 +17,11 @@ function useYoutube(searchKey:string) {
         if(searchKey)
            youtube({params:{ q:searchKey }})
                .then(handleSuccess)
-               .catch(AxiosYoutubeErrorHandling)
+               .catch((e:AxiosError)=>AxiosYoutubeErrorHandling(e,ThrowAsyncError))
 
     },[searchKey])
 
-    return videoLists
+    return videosList
 }
 
 export {useYoutube}

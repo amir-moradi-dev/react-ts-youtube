@@ -4,13 +4,17 @@ import App from "./components/App";
 import './index.css'
 import Layout from "./layout";
 import StateContextProvider from "./store/StateContext";
+import ErrorBoundary from "./ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-      <StateContextProvider>
-          <Layout>
-              <App />
-          </Layout>
-      </StateContextProvider>
+      <ErrorBoundary>
+          <StateContextProvider>
+              <Layout>
+                  <App />
+              </Layout>
+          </StateContextProvider>
+      </ErrorBoundary>
+
   </React.StrictMode>,
 )

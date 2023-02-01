@@ -6,9 +6,9 @@ import Footer from "./Footer";
 function Layout({children}:{children:ReactNode}) {
     return <>
         <Header />
-        <div className={classes.contentContainer}>
+        <main className={classes.contentContainer}>
             {children}
-        </div>
+        </main>
         <Footer />
     </>
 }

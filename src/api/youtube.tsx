@@ -6,7 +6,7 @@ export default axios.create({
     params:{ key:GOOGLE_KEY , part:"snippet", maxResult:"5"  }
 })
 
-export function AxiosYoutubeErrorHandling (error:AxiosError) {
+export function AxiosYoutubeErrorHandling (error:AxiosError,ThrowAsyncError:()=>Error) {
 
     console.log(error)
 
@@ -16,17 +16,30 @@ export function AxiosYoutubeErrorHandling (error:AxiosError) {
     if (error.response) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
+        console.log('The request was made and the server responded with a status code');
+        console.log('Error =>');
+        console.log(error);
+        console.log('Error Message =>');
+        console.log(error.message);
     } else if (error.request) {
         // The request was made but no response was received
         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
         // http.ClientRequest in node.js
-        console.log(error.request);
+        console.log('The request was made but no response was received');
+        console.log('Error =>');
+        console.log(error);
+        console.log('Error Message =>');
+        console.log(error.message);
+        throw new Error(error.message)
     } else {
         // Something happened in setting up the request that triggered an Error
-        console.log('Error', error.message);
+        console.log('Something happened in setting up the request that triggered an Error');
+        console.log('Error =>');
+        console.log(error);
+        console.log('Error Message =>');
+        console.log(error.message);
+        throw new Error(error.message)
     }
+    console.log('error.config =>');
     console.log(error.config);
 }

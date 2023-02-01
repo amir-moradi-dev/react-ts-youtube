@@ -1,24 +1,29 @@
 import classes from './index.module.css'
 import {useYoutube} from "../../hooks";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {StateContext} from "../../store/StateContext";
 import Loading from "../Loading";
-import VideoDetails from "../VideoDetails";
+import SelectedVideo from "../SelectedVideo";
+import VideosList from "../VideosList";
 
 function App() {
-    const {searchKeyCtx:searchKey} = useContext(StateContext)
+    const {searchKeyCtx:searchKey,selectedVideoCtx,setSelectedVideoCtx} = useContext(StateContext)
     const videosList = useYoutube(searchKey)
+    useEffect(()=>{
+        if(videosList)
+            setSelectedVideoCtx(videosList[0])
+    },[searchKey,videosList,setSelectedVideoCtx,selectedVideoCtx])
 
     return <>
-        {!videosList && <Loading className={classes.loading} message={'Loading Videos...'} />}
-        {videosList && (
+        {!videosList && !selectedVideoCtx && <Loading className={classes.loading} message={'Loading Videos...'} />}
+        {videosList && selectedVideoCtx && (
             <div className={classes.containerMain}>
-                <div className={classes.containerLeft}>
-                    <VideoDetails video={videosList[0]} />
-                </div>
-                <div className={classes.containerRight}>
-                    {/*<VideosList />*/}
-                </div>
+                <section className={classes.containerLeft}>
+                    <SelectedVideo video={selectedVideoCtx} />
+                </section>
+                <aside className={classes.containerRight}>
+                    <VideosList videos={videosList}/>
+                </aside>
             </div>
         )}
 
