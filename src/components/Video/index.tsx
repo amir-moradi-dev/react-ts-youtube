@@ -4,23 +4,28 @@ import {useState} from "react";
 import Loading from "../Loading";
 
 type VideoPropsType = {
-    video:YoutubeVideoItemsType
+    video: YoutubeVideoItemsType
 }
 
 
-function Video({video}:VideoPropsType) {
-    const [loading,setLoading]= useState(true)
+function Video({video}: VideoPropsType) {
+    const [loading, setLoading] = useState(true)
 
     return <>
-        {loading && <Loading message={'Video Is Not Ready Yet...'} />}
+        {loading && <Loading className={classes.loading} message={'Video Is Not Ready Yet...'}/>}
         <iframe
-            className={classes.videoIframe}
+            className={classes.videoIframe + '  ' + !loading && classes.show}
             frameBorder={'0'}
             height={'100%'}
             width={'100%'}
             title={'Video Player'}
             allowFullScreen={true}
+            onStalled={()=>console.log('im Stalled')}
             onLoad={()=>setLoading(false)}
+            onError={()=>console.log('im onError')}
+            onEnded={()=>console.log('im onEnded')}
+            onSuspend={()=> console.log('im onSuspend')}
+
             src={'https://www.youtube.com/embed/' + video.id.videoId}
         />
     </>

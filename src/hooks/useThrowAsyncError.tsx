@@ -1,10 +1,14 @@
 import {useCallback, useState} from "react";
 
+export type ReturnTypeUseThrowAsyncError =  (message: string) => void
+
 function useThrowAsyncError() {
     const [,ThrowAsyncError] = useState<null|Error>(null)
     return useCallback( (message:string) =>
-        ThrowAsyncError(new Error(message))
-    ,[])
+        ThrowAsyncError( ()=> {
+            throw new Error(message)
+        })
+    ,[ThrowAsyncError])
 }
 
 export {useThrowAsyncError}
