@@ -11,7 +11,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <ErrorBoundary>
           <StateContextProvider>
               <Layout>
-                  <App />
+                  <ErrorBoundary>
+                      <App />
+                  </ErrorBoundary>
               </Layout>
           </StateContextProvider>
       </ErrorBoundary>

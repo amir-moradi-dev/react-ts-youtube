@@ -9,8 +9,6 @@ export default axios.create({
 
 export function AxiosYoutubeErrorHandling (error:AxiosError,ThrowAsyncError:ReturnTypeUseThrowAsyncError) {
 
-    console.log(error)
-
     if(error.code === 'ERR_NETWORK'){
         console.error('You Are Probably Offline Check That Then Try Again ')
         ThrowAsyncError('You Are Probably Offline Check That Then Try Again... ')

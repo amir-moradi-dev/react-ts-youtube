@@ -1,5 +1,7 @@
 import classes from './index.module.css'
 import React, {ErrorInfo, ReactNode} from "react";
+import LittleCard from "../components/LittleCard";
+import ErrorIcon from '@mui/icons-material/Error';
 
 type ErrorBoundaryStateTypes = {
     error: Error|null
@@ -25,16 +27,17 @@ class ErrorBoundary extends React.Component<ErrorBoundaryPropsType,ErrorBoundary
     }
 
     render() {
-        if (this.state.errorInfo) {
+        if (this.state.error && this.state.errorInfo) {
             // Error path
+
+            console.log(this.state)
+
             return (
                 <div>
-                    <h2>Something went wrong.</h2>
-                    <details style={{ whiteSpace: 'pre-wrap' }}>
-                        {this.state.error && this.state.error.toString()}
-                        <br />
-                        {this.state.errorInfo.componentStack}
-                    </details>
+                    <LittleCard className={classes.littleCard}>
+                        <ErrorIcon style={{ paddingRight:'3px',color:'#c9235b',fontSize:'33px'}}/>
+                        <h3>{this.state.error.message}</h3>
+                    </LittleCard>
                 </div>
             );
         }
