@@ -1,25 +1,26 @@
-import classes from './index.module.css'
-import {YoutubeVideoItemsType} from "../../types";
+import classes from "./index.module.css";
+import { YoutubeVideoItemsType } from "../../types";
 import React from "react";
 import Video from "../Video";
-import {useTestingYoutubeConnection} from "../../hooks";
+import { useTestingYoutubeConnection } from "../../hooks";
 
 type VideosListPropsType = {
-    videos: YoutubeVideoItemsType[]
-}
+  videos: YoutubeVideoItemsType[];
+};
 
-function VideosList({videos}:VideosListPropsType) {
+function VideosList({ videos }: VideosListPropsType) {
+  //
+  useTestingYoutubeConnection();
 
-    //
-    useTestingYoutubeConnection()
-
-    return <>
-        {videos.map(video => (
-            <div className={classes.videoItem} key={video.id.videoId}>
-                <Video video={video}/>
-            </div>
-        ))}
+  return (
+    <>
+      {videos.map((video) => (
+        <div className={classes.videoItem} key={video.id.videoId}>
+          <Video video={video} />
+        </div>
+      ))}
     </>
+  );
 }
 
-export default VideosList
+export default VideosList;

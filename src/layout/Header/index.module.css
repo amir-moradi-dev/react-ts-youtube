@@ -1,24 +1,24 @@
 .navContainer {
-    min-height: 66px;
-    background: #9f4664;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: wheat;
-    box-shadow: 0 7px 8px #9f466485;
+  min-height: 66px;
+  background: #9f4664;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: wheat;
+  box-shadow: 0 7px 8px #9f466485;
 }
 .navRight {
-    width: 66%;
-    text-align: right;
+  width: 66%;
+  text-align: right;
 }
 .navLeft {
-    width: 33%;
+  width: 33%;
 }
 .navLeftSpan {
-    display: flex;
-    align-items: center;
-    padding-left: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
 }
 .navLeftSpan:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
