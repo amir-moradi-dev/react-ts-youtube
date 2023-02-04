@@ -4,7 +4,7 @@ import App from "./components/App";
 import './index.css'
 import Layout from "./layout";
 import StateContextProvider from "./store/StateContext";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

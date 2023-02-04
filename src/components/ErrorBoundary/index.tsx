@@ -1,6 +1,6 @@
 import classes from './index.module.css'
 import React, {ErrorInfo, ReactNode} from "react";
-import LittleCard from "../components/LittleCard";
+import LittleCard from "../LittleCard";
 import ErrorIcon from '@mui/icons-material/Error';
 
 type ErrorBoundaryStateTypes = {
