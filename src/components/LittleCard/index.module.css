@@ -1,9 +1,9 @@
 .littleCard {
-    display: flex;
-    align-items: center;
-    background: #9f466429;
-    padding: 11px;
-    text-align: center;
-    border-radius: 6px;
-    margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  background: #9f466429;
+  padding: 11px;
+  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 3px;
 }

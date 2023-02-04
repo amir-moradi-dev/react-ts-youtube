@@ -1,23 +1,23 @@
 .videoIframe {
-    border-radius: 6px;
-    display: none;
+  border-radius: 6px;
+  display: none;
 }
 .loading {
-    background: #cb517b59;
-    width: auto !important;
-    height: 116px !important;
-    margin: 0 !important;
-    margin-bottom: 6px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    border-radius: 10px;
-    font-family: cursive;
-    color: #000000;
-    box-shadow: 0 0 9px 0 #bebebe;
+  background: #cb517b59;
+  width: auto !important;
+  height: 116px !important;
+  margin: 0 !important;
+  margin-bottom: 6px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 10px;
+  font-family: cursive;
+  color: #000000;
+  box-shadow: 0 0 9px 0 #bebebe;
 }
 .show {
-    display: block;
-    border-radius: 6px;
+  display: block;
+  border-radius: 6px;
 }
