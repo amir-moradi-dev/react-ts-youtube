@@ -1,5 +1,6 @@
 .littleCard {
   display: flex;
+  flex-direction: column;
   align-items: center;
   background: #9f466429;
   padding: 11px;

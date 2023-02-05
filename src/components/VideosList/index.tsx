@@ -2,15 +2,15 @@ import classes from "./index.module.css";
 import { YoutubeVideoItemsType } from "../../types";
 import React from "react";
 import Video from "../Video";
-import { useTestingYoutubeConnection } from "../../hooks";
 
 type VideosListPropsType = {
   videos: YoutubeVideoItemsType[];
 };
 
 function VideosList({ videos }: VideosListPropsType) {
-  //
-  useTestingYoutubeConnection();
+  // this is an issue and does not catch properly it cant get div with
+  // id player inside of iframe tag to insure video is there or not
+  //useTestingYoutubeConnection();
 
   return (
     <>
