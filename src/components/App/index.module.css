@@ -5,18 +5,41 @@
   justify-content: space-around;
   margin: 12px 0;
 }
+
 .containerLeft {
   width: 66%;
   min-height: 77vh;
   margin: 0 auto;
   border-radius: 6px;
 }
+
 .containerRight {
   width: 33%;
   min-height: 330px;
   margin: 0 auto;
   margin-left: 0;
 }
+
 .loading {
   background: #fcd9e5 !important;
+}
+
+@media screen and (max-width: 699px) {
+  .containerMain {
+    flex-direction: column;
+  }
+
+  .containerLeft {
+    width: 98%;
+    height: 330px;
+    margin: 0 auto;
+    border-radius: 6px;
+    margin-bottom: 3px;
+  }
+
+  .containerRight {
+    width: 98%;
+    min-height: 330px;
+    margin: 0 auto;
+  }
 }
